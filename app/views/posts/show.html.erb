@@ -1,0 +1,7 @@
+<p>
+  <b>Title: <%= @post.title %></b><hr/>
+  <%= @post.content %>
+</p>
+
+<%= link_to 'Edit', edit_board_post_path(@board, @post) %> |
+<%= link_to 'Back', board_posts_path(@board) %>

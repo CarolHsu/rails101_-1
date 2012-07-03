@@ -1,45 +1,52 @@
 class PostsController < ApplicationController
 
-	def index
-		@posts = Post.all
-	end
+  def index
+  	@board = Board.find(params[:board_id])
+  	redirect_to board_path(@board)
+  end
 
-	def show
-		@post = Post.find(params[:id])
-	end
+  def show
+    @board = Board.find(params[:board_id])
+    @post = @board.posts.find(params[:id])
+  end
 
-	def new
-		@post = Post.new
-	end
+  def new
+    @board = Board.find(params[:board_id])
+    @post = @board.posts.build
+  end
 
-	def edit
-		@post = Post.find(params[:id])
-	end
+  def edit
+    @board = Board.find(params[:board_id])
+    @post = @board.posts.find(params[:id])
+  end
 
-	def create
-		@post = Post.new(params[:post])
+  def create
+    @board = Board.find(params[:board_id])
+    @post = @board.posts.build(params[:post])
 
-		if @post.save
-			redirect_to board_path(@board)
-		else
-			render action: 'new'
-		end
-	end
+    if @post.save
+      redirect_to board_post_path(@board, @post)
+    else
+      render action: 'new'
+    end
+  end
 
-	def update
-		@post = Post.find(params[:id])
+  def update
+    @board = Board.find(params[:board_id])
+    @post = @board.posts.find(params[:id])
 
-		if @post.update_attributes(params[:post])
-			redirect_to board_path(@board)
-		else
-			render action: 'edit'
-		end
-	end
+    if @post.update_attributes(params[:post])
+      redirect_to board_post_path(@board, @post)
+    else
+      render action: 'edit'
+    end
+  end
 
-	def destroy
-		@post = Post.find(params[:id])
-		@post.destroy
+  def destroy
+  	@board = Board.find(params[:board_id])
+  	@post = @board.posts.find(params[:id])
+    @post.destroy
 
-		redirect_to posts_url
-	end
+    redirect_to board_posts_path(@board)
+  end
 end
