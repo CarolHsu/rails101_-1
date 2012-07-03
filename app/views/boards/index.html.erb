@@ -9,10 +9,10 @@
 	<% @boards.each do |board| %>
 		<tr>
 			<td><%= board.name %></td>
-			<td><%= link_to 'Show', board %></td>
+			<td><%= link_to("Show", board) %></td>
 			<% if current_user && current_user.is_admin? %>
-			<td><%= link_to 'A-Edit', edit_admin_board_path(board) %></td>
-			<td><%= link_to 'A-Destroy', admin_boards_path, :confirm => 'Are you sure?', :method => :delete %></td>
+			<td><%= link_to("A-Edit", edit_admin_board_path(board)) %></td>
+			<td><%= link_to("A-Destroy", admin_boards_path, :confirm => "Are you sure?", :method => :delete) %></td>
 			<% end %>
 		</tr>
 	<% end %>
@@ -20,5 +20,5 @@
 
 <br/>
 <% if current_user && current_user.is_admin? %>
-<%= link_to 'A-New Board', new_admin_board_path %>
+<%= link_to("A-New Board", new_admin_board_path) %>
 <% end %>

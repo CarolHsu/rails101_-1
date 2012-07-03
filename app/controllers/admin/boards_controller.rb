@@ -1,5 +1,5 @@
 class Admin::BoardsController < ApplicationController
-	layout 'admin'
+	layout "admin"
 	before_filter :require_is_admin
 
 
@@ -21,7 +21,7 @@ class Admin::BoardsController < ApplicationController
 		if @board.save
 			redirect_to board_path(@board)
 		else
-			render :action => 'new'
+			render :action => "new"
 		end
 	end
 
@@ -31,7 +31,7 @@ class Admin::BoardsController < ApplicationController
 		if @board.update_attributes(params[:board])
 			redirect_to rboard_path(@board)
 		else
-			render :action => 'edit'
+			render :action => "edit"
 		end
 	end
 

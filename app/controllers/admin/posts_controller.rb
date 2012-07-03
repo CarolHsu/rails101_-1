@@ -1,5 +1,5 @@
 class Admin::PostsController < ApplicationController
-  layout 'admin'
+  layout "admin"
   before_filter :require_is_admin
   before_filter :authenticate_user!, :except => [:index]
   before_filter :find_board_post
@@ -14,7 +14,7 @@ class Admin::PostsController < ApplicationController
     if @post.update_attributes(params[:post])
       redirect_to board_post_path(@board, @post)
     else
-      render action: 'edit'
+      render action: "edit"
     end
   end
 
