@@ -13,3 +13,10 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+#Ignore the upload folder
+/public/uploads/
+/public/uploads/post/avatar/.DS_Store
+
+#Ignore the database.yml file
+/config/database.yml
