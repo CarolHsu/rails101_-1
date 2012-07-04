@@ -4,6 +4,12 @@
     <%= f.text_field :title %>
     <%= f.label :content, "Content" %>
     <%= f.text_area :content %>
+    <p>Upload a picture</p>
+    <%= image_tag(@post.avatar_url) if @post.avatar? %>
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %>
+    <p>Or, you can upload a image url...</p>
+    <%= f.text_field :remote_avatar_url %>
   </div>
   <div>
     <%= f.submit "Create" %>

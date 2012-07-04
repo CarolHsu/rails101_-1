@@ -1,5 +1,6 @@
 <p>
   <b>Title: <%= @post.title %></b><hr/>
+  <%= image_tag(@post.avatar_url) if @post.avatar? %><br/>
   <%= @post.content %>
 </p>
 

@@ -3,4 +3,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   #default_scope :order => "created_at DESC"
   scope :recent, :order => "updated_at DESC"
+
+  #fileuploader
+  mount_uploader :avatar, AvatarUploader
 end
