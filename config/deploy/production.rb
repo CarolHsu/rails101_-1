@@ -1,5 +1,5 @@
 set :application, "forum_demo" 
-set :domain, "forum_demo.dtest.buyble.com.tw" 
+set :domain, "dtest.buyble.com.tw" 
 set :repository, "git@github.com:CarolHsu/rails101_-1.git" # your ssh way in github.
 set :deploy_to, "/home/apps/forum_demo" 
 role :app, domain
