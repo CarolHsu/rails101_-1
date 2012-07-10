@@ -14,7 +14,7 @@ set :scm_verbose, true
 set :use_sudo, false
 set :user, "apps" 
 set :group, "apps" 
-default_environment["PATH"] = "/opt/bin/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/games" 
+default_environment["PATH"] = "/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/games" 
 namespace :deploy do
 desc "restart" 
 task :restart do
