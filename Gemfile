@@ -45,3 +45,5 @@ gem 'will_paginate'
 gem 'carrierwave'
 
 gem 'rmagick'
+
+gem 'mysql2'
